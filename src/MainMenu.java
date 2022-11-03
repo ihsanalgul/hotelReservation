@@ -13,14 +13,19 @@ public class MainMenu {
     private static final HotelResource hotelResource = HotelResource.hotelResource;
 
     public static void menu() {
-        try (Scanner scanner = new Scanner(System.in)) {
+        Scanner scanner = new Scanner(System.in);
+        String userInput;
+
+        try (scanner) {
             do {
                 System.out.println("1. Find and reserve a room");
                 System.out.println("2. See my reservations");
                 System.out.println("3. Create an account");
                 System.out.println("4. Admin");
                 System.out.println("5. Exit");
-                String userInput = scanner.nextLine();
+
+                userInput = scanner.nextLine();
+
                 switch (userInput) {
                     case "1" -> reserveARoom(scanner);
                     case "2" -> getCustomerReservations(scanner);
@@ -32,7 +37,7 @@ public class MainMenu {
                     }
                     default -> System.out.println("Unknown input!");
                 }
-                System.out.println("User input: " + userInput);
+                System.out.println("Please press enter to get main menu");
             } while (!scanner.nextLine().equals("5"));
 
         } catch (IllegalArgumentException e) {
@@ -52,6 +57,10 @@ public class MainMenu {
         System.out.println("Please enter your email address:");
         Customer customer = customerCheck(scanner);
         String customerEmail = customer.getEmail();
+
+        System.out.println("Please Enter A Check in Date in the dd/mm/yyyy format:");
+        System.out.println("Please Enter A Check in Date in the dd/mm/yyyy format:");
+        System.out.println("Please Enter A Check in Date in the dd/mm/yyyy format:");
         System.out.println("Please Enter A Check in Date in the dd/mm/yyyy format:");
         Date dateIn = new SimpleDateFormat("dd/MM/yyyy").parse(scanner.nextLine());
         System.out.println("Please Enter A Check Out Date in the mm/dd/yyyy format:");
