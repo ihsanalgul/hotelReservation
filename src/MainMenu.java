@@ -57,6 +57,7 @@ public class MainMenu {
         System.out.println("Please enter your email address:");
         Customer customer = customerCheck(scanner);
         String customerEmail = customer.getEmail();
+
         System.out.println("Please Enter A Check in Date in the dd/mm/yyyy format:");
         Date dateIn = new SimpleDateFormat("dd/MM/yyyy").parse(scanner.nextLine());
         System.out.println("Please Enter A Check Out Date in the mm/dd/yyyy format:");
